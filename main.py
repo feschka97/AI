@@ -25,13 +25,17 @@ def dethree():
         start+=1
     print(output)
 def defour():
-    binary = int(input("Введите число:"))
-    output=list()
-    if binary % 2:
-        output.append(1)
-    else:
-        output.append(0)
-    print (output)
+    binary = bin(int(input("Введите число:")))
+    print(binary.count("1"))
+
+def defah():
+    print (0)
+
+
+
+
+
+
 
 
 choice = 1
@@ -41,4 +45,5 @@ match choice:
     case "2": detwo()
     case "3": dethree()
     case "4": defour()
+    case "5": defah()
     case _: print("Паника!")
