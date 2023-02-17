@@ -49,5 +49,5 @@ try:
         case "4": defour()
         case "5": defah()
         case _: print("Паника!")
-except exception as exx:
-    print("Вылезло исключение ", exx)
+except Exception as exx:
+    print("Вылезло исключение - ", exx)
