@@ -1,7 +1,7 @@
-
-
 def deone():
     text = input("Введите слово:")
+    while text == "":
+        text = input("Введите слово:")
     letter = input("Введите букву в слове для поиска:")
     if letter in text:
         print("Нашли букву '" + letter + "' в слове \"" + text + "\"")
@@ -27,7 +27,6 @@ def dethree():
 def defour():
     binary = bin(int(input("Введите число:")))
     print(binary.count("1"))
-
 def defah():
     io = int(input("Введите число:"))
     while (True):
@@ -40,25 +39,6 @@ def defah():
             case "5":break
             case _: print("Паника!");break
     print(io)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 choice = 1
 choice = input("Задание: \n")
 match choice:
