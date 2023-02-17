@@ -39,12 +39,15 @@ def defah():
             case "5":break
             case _: print("Паника!");break
     print(io)
-choice = 1
-choice = input("Задание: \n")
-match choice:
-    case "1": deone()
-    case "2": detwo()
-    case "3": dethree()
-    case "4": defour()
-    case "5": defah()
-    case _: print("Паника!")
+try:
+    choice = 1
+    choice = input("Задание: \n")
+    match choice:
+        case "1": deone()
+        case "2": detwo()
+        case "3": dethree()
+        case "4": defour()
+        case "5": defah()
+        case _: print("Паника!")
+except exception as exx:
+    print("Вылезло исключение ", exx)
