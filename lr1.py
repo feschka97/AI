@@ -8,14 +8,18 @@ def deone():
         print(text.index(letter) + 1)
     else:
         print("Таковой буквы нема")
+
 def detwo():
-    lim = int(input("Введите n дляя предельного числа в последовательности Фибоначчи:"))
+    lim = int(input("Введите n для предельного числа в последовательности Фибоначчи:"))
     curr=1
     next=1
     while next < lim:
+        print(curr)
         curr +=next
+        print(next)
         next +=curr
-    print(curr)
+
+
 def dethree():
     fact = int(input("Введите n для факториала:"))
     start = 1
