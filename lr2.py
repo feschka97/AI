@@ -1,22 +1,32 @@
+import string
 
 
 def deone():
-    print(sum(listin))
+    print(sum(listin), "- сумма")
+    prod=1
+    for index in listin:
+        prod *=index
+    print(prod, "- произведение")
+
 
 def detwo():
-    print(max(listin))
+    print(max(listin), "- максимальный член списка")
 
 def dethree():
     var=0
     for var in listin:
-        if listin.count(var) !=0:
+        if listin.count(var) > 1:
             print(var," - дубликат")
+        else:
+            print("Дубликатов нет")
+            break
+
 
 def defour():
-    min = min(listin)
-    max= max(listin)
-    listin[listin.index(min)] = max
-    listin[listin.index(max)] = min
+    minimal = min(listin)
+    maximal= max(listin)
+    listin[listin.index(minimal)] = maximal
+    listin[listin.index(maximal)] = minimal
 
 def defah():
     frommax = 0
@@ -33,7 +43,6 @@ def defah():
             print("Добавили в игрока с ПП ", current)
             lower=frommax_team[-1]
             print("Текущее ПП в команде: ", sum(frommax_team))
-    
 
 
 
