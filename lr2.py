@@ -22,26 +22,25 @@ def defah():
     frommax = 0
     frommax_team=[]
     frommax_team.append(max(listin))
-    current = listin[:-1]
-    lower =0
-    while max(frommax_team)+lower < current:
-        frommax_team.append(current)
-        frommax_team.sort()
-        frommax=frommax_team[0]+frommax_team[1]
-        listin.remove(current)
-        print("Добавили в игрока с ПП ", current)
-        current = listin.index(random.randint(0,listin.count()))
-        lower=frommax_team[:-2]
-        print("Текущее ПП в команде: ", sum(frommax_team))
-
+    lower=0
+    for current in listin:
+        if max(frommax_team)+lower > current:
+            print("Начало")
+            frommax_team.append(current)
+            frommax_team.sort()
+            frommax=frommax_team[0]+frommax_team[1]
+            del listin[listin.index(current)]
+            print("Добавили в игрока с ПП ", current)
+            lower=frommax_team[-1]
+            print("Текущее ПП в команде: ", sum(frommax_team))
+    
 
 
 
 try:
     rook=0
-    listin = []
-    while rook != random.randint(0,5):
-        listin.append((random.randint(0,5)))
+    listin = [608,602,251,291,841,415,395,952,287,206,552,525,811,995,358,589,897,892,926,977,770,921,214,722,227,732,320,203,262,623,231,315]
+    listin.sort()
     choice = 1
     choice = input("Задание: \n")
     match choice:
