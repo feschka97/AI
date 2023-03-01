@@ -1,4 +1,4 @@
-import random
+
 
 def deone():
     print(sum(listin))
