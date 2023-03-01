@@ -1,5 +1,3 @@
-import string
-
 
 def deone():
     print(sum(listin), "- сумма")
