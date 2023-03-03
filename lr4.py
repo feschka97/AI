@@ -1,5 +1,4 @@
-import math
-import asda
+import fourth_calc
 
 try:
     io = int(input("Введите число:"))
@@ -11,13 +10,14 @@ try:
             case "2": io-=int(input("Введите вычитаемое:")); print(io," - результат");action=0
             case "3": io/=int(input("Введите делитель:")); print(io," - результат");action=0
             case "4": io*=int(input("Введите множитель:")); print(io," - результат");action=0
-            case "5": io=math.remainder(io,int(input("Введите делитель"))); print(io," - результат");action=0
-            case "6": break#sine
-            case "7": break#cosine
-            case "8": break#tangent
-            case "9": break#cotangent
+            case "5": io=calc.remainder(io,int(input("Введите делитель:")));print(io,"-результат");action=0
+            case "6": io=calc.sine(io);print(io,"-результат");action=0
+            case "7": io=calc.cosine(io);print(io,"-результат");action=0
+            case "8": io=calc.tangent(io);print(io,"-результат");action=0
+            case "9": io=calc.cotangent(io);print(io,"-результат");action=0
             case "10":break
             case _: print("Паника!");break
     print(io)
 except Exception as exx:
     print("Вылезло исключение - ", exx)
+
