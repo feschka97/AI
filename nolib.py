@@ -1,8 +1,7 @@
 def Fixup(str):
     print(str)
     str = input("Введите переправленный вариант\n")
-    Checkque(str)
-
+    return str
 def Checkque(str):
     for i in indeces:
         if str[i].isdigit():
@@ -22,10 +21,7 @@ def Checkque(str):
         else:
             Fixup(str)
             break
-    io.write(str)
-
-
-
+    return str
 try:
     io = open("vasya.txt", "w")
     spreadsheet = open("74.csv", "r", errors="ignore")
@@ -35,7 +31,7 @@ try:
     tab = [11,17,20]
     for value in array:
         Checkque(value)
-
+        io.write(value)
     spreadsheet.close()
 except Exception as ex:
         print(ex)
