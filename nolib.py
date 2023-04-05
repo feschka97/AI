@@ -9,16 +9,19 @@ def Checkque(str):
             continue
         else:
             Fixup(str)
+            break
     for uh in minus:
         if str[uh] == '-':
             continue
         else:
             Fixup(str)
+            break
     for em in tab:
         if str[em] == '\t':
             continue
         else:
             Fixup(str)
+            break
     io.write(str)
 
 
