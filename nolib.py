@@ -1,6 +1,6 @@
 def Fixup(str):
     print(str)
-    str = input("Введите переправленный вариант\n")
+    str = input("Введите переправленный вариант\n") + "\n"
     return str
 def Checkque(str):
     for i in indeces:
