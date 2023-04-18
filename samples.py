@@ -2,7 +2,6 @@ import re
 import random
 import pandas as pd
 try:
-    f = open('test.csv', 'w')
     cases = {0,1}
     values1 = [346,395]
     values2 = [148,99]
