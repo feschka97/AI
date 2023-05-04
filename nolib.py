@@ -1,25 +1,37 @@
-class BruhMemento(Exception): pass
+def Fixup(stre,mistakes):
+    stre = stre.replace(stre[mistakes.index(1)],'')
+    mistakes[mistakes.index(1)] = 0
+    print(stre[22]) # '"12-16-1199	8l:	33	8"'
+                    # '"12-16-1990	08:00	58	205"'
+    if (Checkque(stre)):
+        return stre
+
 
 def Checkque(stre):
-    try:
-        for i in indeces:
-            if stre[i].isdigit():
-                continue
-            else:
-                raise BruhMemento
-        for uh in minus:
-            if stre[uh] == '-':
-                continue
-            else:
-                raise BruhMemento
-        for em in tab:
-            if stre[em] == '\t':
-                continue
-            else:
-                raise BruhMemento
+    mistakes = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    for i in indeces:
+        if stre[i].isdigit():
+            mistakes[i] = 0
+            continue
+        else:
+            mistakes[i] = 1
+    for uh in minus:
+        if stre[uh] == '-':
+            mistakes[uh] = 0
+            continue
+        else:
+            mistakes[uh] = 1
+    for em in tab:
+        if stre[em] == '\t':
+            mistakes[em] = 0
+            continue
+        else:
+            mistakes[em] = 1
+    if mistakes == [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]:
         return True
-    except BruhMemento:
-        tablo.write(stre)
+    else:
+        stre = Fixup(stre,mistakes)
+
 try:
     io = open("vasya.txt", "w")
     spreadsheet = open("74.csv", "r", errors="ignore")
