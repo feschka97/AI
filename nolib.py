@@ -1,7 +1,7 @@
-def Fixup(stre,mistakes):
-    stray = ''
-    for indx in range(len(mistakes)):
-        stray+=stre[indx]
+import re
+
+def Fixup(stre):
+    
 
 
     if (Checkque(stre)):
@@ -9,28 +9,7 @@ def Fixup(stre,mistakes):
 
 
 def Checkque(stre):
-    for i in indeces:
-        if stre[i].isdigit():
-            mistakes[i] = 0
-            continue
-        else:
-            mistakes[i] = 1
-            break
-    for uh in minus:
-        if stre[uh] == '-':
-            mistakes[uh] = 0
-            continue
-        else:
-            mistakes[uh] = 1
-            break
-    for em in tab:
-        if stre[em] == '\t':
-            mistakes[em] = 0
-            continue
-        else:
-            mistakes[em] = 1
-            break
-    if mistakes == [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]:
+    if:
         return True
     else:
         return False
@@ -44,7 +23,6 @@ try:
     minus = [3, 6]
     tab = [11, 17, 20]
     tablo = open("errorsbruh.txt", 'w')
-    mistakes = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     for value in array:
         if (Checkque(value)):
             io.write(value)

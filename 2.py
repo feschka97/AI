@@ -1,16 +1,14 @@
-# coding=utf8
 import re
-import time
-timer = time.time()
 io = open("vasya.txt", "w")
-
 try:
     spreadsheet = open("74.csv", "r", errors="ignore")
     for value in spreadsheet:
-        if time.strptime(re.sub("[^\d]", '', value),"%m%d%Y%H%M%f"):
-            io.write(re.sub("[^\d\n\-\:\t]", '', value))
+        if re.fullmatch("\"\d\d-\d\d-\d\d\d\d\s\d\d:\d\d\t\d\d\t\d\d\d\"", value):
+            io.write(value)
+        else:
+            print(value)
     spreadsheet.close()
-    print('Затрачено:',time.time()-timer)
+    
 except Exception as ex:
     print(ex)
 
