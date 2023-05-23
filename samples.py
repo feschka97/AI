@@ -1,21 +1,13 @@
-import re
 import random
-import pandas as pd
-try:
-    cases = {0,1}
-    values1 = [346,395]
-    values2 = [148,99]
-    TSample = []
-    TrSample = []
-    for value in cases: #346/148 - 70%/30%; 395/99 - 80%/20%
-        spreadsheet = open("vasya.txt", "r", errors="ignore")
-        spreadsheet = spreadsheet.readlines()
-        while len(TSample) < values1[value]:
-            eh = random.randint(0,len(spreadsheet)-1)
-            TSample.append(spreadsheet[eh])
-            spreadsheet.pop(eh)
-        TrSample = spreadsheet.copy()
-        print("жопа")
-
-except Exception as ex:
-    print(ex)
+cases = {0,1}
+for value in cases:
+	spreadsheet = open("vasya.txt", "r", errors="ignore")
+	spreadsheet = spreadsheet.readlines()
+	values1 = [int(len(spreadsheet)*0.7), int(len(spreadsheet)*0.8)]
+	values2 = [len(spreadsheet)-values1[0], len(spreadsheet)-values1[1]]
+	Tren = []
+	while len(Tren) < values1[value]:
+		eh = random.randint(0,len(spreadsheet)-1)
+		Tren.append(spreadsheet[eh])
+		spreadsheet.pop(eh)
+	Test = spreadsheet.copy()
