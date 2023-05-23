@@ -21,15 +21,17 @@ else:
 
 mode = spreadsheet[counts.index(max(counts))]
 
-
 dispa = 0
-
+disper = 0
+spreadsheet.sort()
 for cyclevar in range(length):
-    dispa=spreadsheet[cyclevar]-mean
-dispa=dispa*dispa / (length-1)
+    dispa = spreadsheet[cyclevar]-mean
+    dispa = dispa * dispa
+    disper +=dispa
+disper=disper / (length-1)
 
 
 print(mean, "- среднее значение")
 print(median, "- медиана")
 print(mode, "- мода, с",max(counts), "вхождениями")
-print(dispa,"- дисперсия")
+print(disper,"- дисперсия")
