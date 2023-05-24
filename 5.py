@@ -26,10 +26,17 @@ disper /= length - 1
 for cyclevar in range(length):
     spreadsheet[cyclevar] = (spreadsheet[cyclevar] - mean) / disper
 
-normal = np.array(spreadsheet)
-normal = pp.normalize([normal])
-print(normal, "- нормализованные данные")
+normalZ = np.array(spreadsheet)
 
-scaled = pp.scale(normal,axis=1)
+print(normalZ, "- данные из Z-нормализации\n")
+scaled = pp.scale(normalZ)
+print(scaled, "- масштабированные данные из Z-нормализации")
 
-print(scaled, "- масштабированные данные")
+normalMinMax =[]
+for value in spreadsheet:
+    a = -1
+    b = 1
+    X = a + (value - min(spreadsheet))/(max(spreadsheet)-min(spreadsheet)) * (b-a)
+    normalMinMax.append(value)
+print(normalMinMax, "- данные из минимаксной нормализации")
+print(pp.scale(normalMinMax), "- масштабированные данные из минимаксной нормализации")
