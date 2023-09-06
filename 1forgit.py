@@ -1,8 +1,8 @@
 import time
-import numpy
+import pandas
 timer = time.time()
 try:
-    spreadsheet = numpy.loadtxt("74.csv",dtype=str)
+ spreadsheet = pandas.read_csv("74.csv",encoding='windows-1251')
     print('Затрачено:',time.time()-timer)
 except Exception as ex:
     print(ex)
